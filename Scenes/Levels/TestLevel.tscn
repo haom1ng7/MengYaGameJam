@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://o42shirnybqb"]
+
+[ext_resource type="PackedScene" uid="uid://b4hcof6bp7fqj" path="res://Scenes/Characters/PlayerDot.tscn" id="1_ytf4i"]
+[ext_resource type="PackedScene" uid="uid://cspnbs5dgj8ct" path="res://Scenes/Objects/Runner.tscn" id="2_7e5cw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iuug4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o0omn"]
+
+[node name="TestLevel" type="Node2D" unique_id=713559436]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=398691272]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1391881932]
+position = Vector2(0, 129)
+shape = SubResource("WorldBoundaryShape2D_iuug4")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1995279137]
+position = Vector2(0, 151)
+scale = Vector2(267.99997, 42.83145)
+texture = SubResource("PlaceholderTexture2D_o0omn")
+
+[node name="PlayerDot" parent="." unique_id=780174702 instance=ExtResource("1_ytf4i")]
+position = Vector2(-66, 106)
+
+[node name="Runner" parent="." unique_id=1158606412 instance=ExtResource("2_7e5cw")]
+position = Vector2(-28, 98)
