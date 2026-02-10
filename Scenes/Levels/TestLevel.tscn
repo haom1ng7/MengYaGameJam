@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cspnbs5dgj8ct" path="res://Scenes/Objects/Runner.tscn" id="2_7e5cw"]
 [ext_resource type="PackedScene" uid="uid://csr3rj1v25imu" path="res://Scenes/Objects/Cannon.tscn" id="3_7e5cw"]
 [ext_resource type="PackedScene" uid="uid://3bm8rj3fwqm8" path="res://Scenes/Environment/OneWayPlatform.tscn" id="4_iuug4"]
+[ext_resource type="PackedScene" uid="uid://d4g0qxrjtotqj" path="res://Scenes/Objects/WiFi.tscn" id="5_o0omn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iuug4"]
 
@@ -32,4 +33,8 @@ position = Vector2(-28, 98)
 position = Vector2(33, 94)
 
 [node name="OneWayPlatform" parent="." unique_id=2010015193 instance=ExtResource("4_iuug4")]
-position = Vector2(-117, 76)
+position = Vector2(108, 77)
+
+[node name="WiFi" parent="." unique_id=279699519 node_paths=PackedStringArray("remote_target") instance=ExtResource("5_o0omn")]
+position = Vector2(-125, 110)
+remote_target = NodePath("../Runner")

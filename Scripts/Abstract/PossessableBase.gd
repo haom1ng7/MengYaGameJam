@@ -21,6 +21,7 @@ signal possessed_end ## 结束附身
 # 状态
 # ------------------------------------------------------------------------------
 var is_possessed: bool = false
+var is_remote_controlled: bool = false ## 是否正被远程操控
 var _player: PlayerController = null
 
 # ------------------------------------------------------------------------------
@@ -31,7 +32,8 @@ func _ready() -> void:
 	_update_visual_state(false)
 
 func _physics_process(delta: float) -> void:
-	if is_possessed:
+	# 附身或远程操控状态下，响应输入和移动
+	if is_possessed or is_remote_controlled:
 		_handle_input(delta)
 		_handle_movement(delta)
 		move_and_slide()
@@ -44,6 +46,18 @@ func _physics_process(delta: float) -> void:
 # ------------------------------------------------------------------------------
 # 公共接口
 # ------------------------------------------------------------------------------
+
+## 开启/关闭远程操控模式
+func set_remote_control(active: bool) -> void:
+	is_remote_controlled = active
+	_update_visual_state(active)
+	
+	if active:
+		emit_signal("possessed_start") # 复用信号以便触发逻辑
+		_on_possess_start()
+	else:
+		emit_signal("possessed_end")
+		_on_possess_end()
 
 ## 开始附身
 func start_possession(player: PlayerController) -> void:

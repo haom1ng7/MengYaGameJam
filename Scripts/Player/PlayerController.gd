@@ -26,6 +26,7 @@ enum State { NORMAL, POSSESSING }
 # ------------------------------------------------------------------------------
 @onready var _sprite: Sprite2D = $Sprite2D
 @onready var _detection_area: Area2D = $DetectionArea
+@onready var _camera: Camera2D = $Camera2D
 
 # ------------------------------------------------------------------------------
 # 状态变量
@@ -140,11 +141,19 @@ func _perform_detach(velocity_override: Variant = null) -> void:
 	global_position = exit_pos
 	velocity = exit_vel
 	
+	# 强制摄像机归位 (修复 WiFi 等远程控制导致的相机偏移残留)
+	if _camera:
+		_camera.position = Vector2.ZERO
+	
 	_set_physics_active(true)
 
 ## [API] 强制脱离
 func force_detach(launch_velocity: Vector2) -> void:
 	_perform_detach(launch_velocity)
+
+## [API] 获取相机引用
+func get_camera() -> Camera2D:
+	return _camera
 
 func _set_physics_active(active: bool) -> void:
 	if _sprite: _sprite.visible = active
