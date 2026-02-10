@@ -10,3 +10,7 @@ export_presets.cfg
 Thumbs.db
 Desktop.ini
 builds/
+Temp/
+.gemini
+GEMINI.md
+.gemini-clipboard/
