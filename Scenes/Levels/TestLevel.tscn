@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b4hcof6bp7fqj" path="res://Scenes/Characters/PlayerDot.tscn" id="1_ytf4i"]
 [ext_resource type="PackedScene" uid="uid://cspnbs5dgj8ct" path="res://Scenes/Objects/Runner.tscn" id="2_7e5cw"]
+[ext_resource type="PackedScene" uid="uid://csr3rj1v25imu" path="res://Scenes/Objects/Cannon.tscn" id="3_7e5cw"]
+[ext_resource type="PackedScene" uid="uid://3bm8rj3fwqm8" path="res://Scenes/Environment/OneWayPlatform.tscn" id="4_iuug4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iuug4"]
 
@@ -25,3 +27,9 @@ position = Vector2(-66, 106)
 
 [node name="Runner" parent="." unique_id=1158606412 instance=ExtResource("2_7e5cw")]
 position = Vector2(-28, 98)
+
+[node name="Cannon" parent="." unique_id=1252260928 instance=ExtResource("3_7e5cw")]
+position = Vector2(33, 94)
+
+[node name="OneWayPlatform" parent="." unique_id=2010015193 instance=ExtResource("4_iuug4")]
+position = Vector2(-117, 76)

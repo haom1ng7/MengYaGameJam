@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://jsm5fwp77m6h"]
+
+[ext_resource type="Texture2D" uid="uid://b2xrbwxhj3r0t" path="res://Assets/Animation/point nodot.png" id="1_64l7c"]
+[ext_resource type="Script" uid="uid://bewwa6xytmaxr" path="res://Scripts/Effects/OneShotEffect.gd" id="2_03h38"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dah21"]
+atlas = ExtResource("1_64l7c")
+region = Rect2(0, 0, 220, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oipiv"]
+atlas = ExtResource("1_64l7c")
+region = Rect2(220, 0, 220, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h0xs"]
+atlas = ExtResource("1_64l7c")
+region = Rect2(440, 0, 220, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2m22"]
+atlas = ExtResource("1_64l7c")
+region = Rect2(660, 0, 220, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gh0c"]
+atlas = ExtResource("1_64l7c")
+region = Rect2(880, 0, 220, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywb0q"]
+atlas = ExtResource("1_64l7c")
+region = Rect2(1100, 0, 220, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfoxm"]
+atlas = ExtResource("1_64l7c")
+region = Rect2(1320, 0, 220, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvarv"]
+atlas = ExtResource("1_64l7c")
+region = Rect2(1540, 0, 220, 220)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3ar5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dah21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oipiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h0xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2m22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gh0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywb0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfoxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvarv")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="PossessRipple" type="AnimatedSprite2D" unique_id=463864402]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_w3ar5")
+frame = 8
+frame_progress = 1.0
+script = ExtResource("2_03h38")
