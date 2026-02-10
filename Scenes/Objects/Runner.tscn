@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://cspnbs5dgj8ct"]
 
 [ext_resource type="Script" uid="uid://db1audsf1hteh" path="res://Scripts/Objects/Runner.gd" id="1_3nfh5"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a4ra2"]
+[ext_resource type="Texture2D" uid="uid://ctijfxm16sk14" path="res://Assets/Texture/Character/running man.png" id="2_a4ra2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owrgv"]
-size = Vector2(22, 55.5)
+size = Vector2(22, 40)
 
 [node name="Runner" type="CharacterBody2D" unique_id=1158606412]
+position = Vector2(0, -21.225)
 collision_layer = 2
 script = ExtResource("1_3nfh5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2017594692]
 position = Vector2(0, 7.6293945e-06)
-scale = Vector2(21.499996, 55.000004)
-texture = SubResource("PlaceholderTexture2D_a4ra2")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_a4ra2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=938553837]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_owrgv")
