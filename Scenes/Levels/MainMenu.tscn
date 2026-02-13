@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://okbmp562ygun"]
+
+[ext_resource type="Script" uid="uid://d1w6slqjaj3dg" path="res://Scripts/Menu/MainMenu.gd" id="1_8dgdn"]
+[ext_resource type="Texture2D" uid="uid://bltkixpmvrk7f" path="res://Assets/Texture/Scene/Main Menu/mm_bg.png" id="1_mke16"]
+[ext_resource type="Texture2D" uid="uid://dm71sbt23u0x3" path="res://Assets/Texture/Scene/Main Menu/mm_start_new.png" id="2_iruej"]
+[ext_resource type="Texture2D" uid="uid://ddswv2ltaki5l" path="res://Assets/Texture/Scene/Main Menu/mm_select_new.png" id="3_8dgdn"]
+[ext_resource type="Texture2D" uid="uid://xdm5w7k81dgm" path="res://Assets/Texture/Scene/Main Menu/mm_quit_new.png" id="4_ybd2e"]
+[ext_resource type="Texture2D" uid="uid://c8wx4kr0lll4l" path="res://Assets/Texture/Scene/Main Menu/mm_reddot.png" id="5_x0g5v"]
+[ext_resource type="Texture2D" uid="uid://bn281abqf7b5d" path="res://Assets/Texture/Scene/Main Menu/mm_yellowdot.png" id="6_82l7r"]
+[ext_resource type="Texture2D" uid="uid://ddrhkd3pr0jvb" path="res://Assets/Texture/Scene/Main Menu/mm_greendot.png" id="7_2xmls"]
+[ext_resource type="Script" uid="uid://do0f3xpd6b6p" path="res://Scripts/Menu/DraggableDot.gd" id="8_8dgdn"]
+
+[node name="MainMenu" type="Control" unique_id=1292172435]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8dgdn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=893698060]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_mke16")
+stretch_mode = 6
+
+[node name="MmStartNew" type="Sprite2D" parent="TextureRect" unique_id=1778435272]
+position = Vector2(1497, 492)
+texture = ExtResource("2_iruej")
+
+[node name="MmSelectNew" type="Sprite2D" parent="TextureRect" unique_id=1554219828]
+position = Vector2(1454, 697)
+texture = ExtResource("3_8dgdn")
+
+[node name="MmQuitNew" type="Sprite2D" parent="TextureRect" unique_id=1445725842]
+position = Vector2(1275, 895)
+texture = ExtResource("4_ybd2e")
+
+[node name="MmReddot" type="TextureRect" parent="TextureRect" unique_id=313245508]
+layout_mode = 0
+offset_left = 1076.0
+offset_top = 871.0
+offset_right = 1125.0
+offset_bottom = 920.0
+texture = ExtResource("5_x0g5v")
+script = ExtResource("8_8dgdn")
+metadata/_custom_type_script = "uid://do0f3xpd6b6p"
+
+[node name="MmYellowdot" type="TextureRect" parent="TextureRect" unique_id=1082704979]
+layout_mode = 0
+offset_left = 1177.0
+offset_top = 674.0
+offset_right = 1226.0
+offset_bottom = 723.0
+texture = ExtResource("6_82l7r")
+script = ExtResource("8_8dgdn")
+metadata/_custom_type_script = "uid://do0f3xpd6b6p"
+
+[node name="MmGreendot" type="TextureRect" parent="TextureRect" unique_id=1205067957]
+physics_interpolation_mode = 0
+layout_mode = 0
+offset_left = 1273.0
+offset_top = 468.0
+offset_right = 1322.0
+offset_bottom = 517.0
+texture = ExtResource("7_2xmls")
+script = ExtResource("8_8dgdn")
+metadata/_custom_type_script = "uid://do0f3xpd6b6p"
+
+[node name="StartZone" type="Control" parent="TextureRect" unique_id=442925437]
+anchors_preset = 0
+offset_left = 1047.0
+offset_top = 79.0
+offset_right = 1147.0
+offset_bottom = 179.0
+
+[node name="SelectZone" type="Control" parent="TextureRect" unique_id=25594883]
+anchors_preset = 0
+offset_left = 863.0
+offset_top = 384.0
+offset_right = 963.0
+offset_bottom = 484.0
+
+[node name="QuitZone" type="Control" parent="TextureRect" unique_id=1820788482]
+anchors_preset = 0
+offset_left = 691.0
+offset_top = 690.0
+offset_right = 791.0
+offset_bottom = 790.0

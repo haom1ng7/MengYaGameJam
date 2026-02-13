@@ -1,0 +1,115 @@
+[gd_scene format=4 uid="uid://cqsbhkl8s1fqu"]
+
+[ext_resource type="Texture2D" uid="uid://cmmf4s5nee03r" path="res://Assets/Texture/Scene/background？.png" id="1_usvgl"]
+[ext_resource type="Script" uid="uid://bghlf8ifap2yh" path="res://Scripts/Levels/UI.gd" id="2_f7il4"]
+[ext_resource type="PackedScene" uid="uid://b78u5yskk1qqi" path="res://Scenes/Levels/PauseMenu.tscn" id="3_t3p73"]
+[ext_resource type="PackedScene" uid="uid://b4hcof6bp7fqj" path="res://Scenes/Characters/PlayerDot.tscn" id="4_eu11u"]
+[ext_resource type="Texture2D" uid="uid://cd80jm5qll6yy" path="res://Assets/Texture/Scene/map.png" id="5_je8qv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4d3fe"]
+texture = ExtResource("5_je8qv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -4.290001, -16, -4.290001)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0.63726044, -16, 0.89216614)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0.63726044, -16, 0.89216614)
+
+[sub_resource type="TileSet" id="TileSet_3ipdw"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_4d3fe")
+
+[node name="Level1" type="Node2D" unique_id=1437473766]
+
+[node name="Background？" type="Sprite2D" parent="." unique_id=1170243172]
+position = Vector2(842, 426)
+texture = ExtResource("1_usvgl")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=896909254]
+script = ExtResource("2_f7il4")
+
+[node name="PauseMenu" parent="UI" unique_id=163397479 instance=ExtResource("3_t3p73")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -295.0
+offset_right = -466.0
+offset_bottom = -295.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=350459701]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = -234.0
+offset_right = 394.0
+offset_bottom = -31.0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[img=100x64]res://Assets/Texture/WASD.png[/img] 移动
+[img=32x32]res://Assets/Texture/E.png[/img] 交互
+[img=32x32]res://Assets/Texture/Q.png[/img] 退出
+[img=180x32]res://Assets/Texture/Space.png[/img] 发射/跳跃
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="FadeRect" type="ColorRect" parent="UI" unique_id=556028059]
+anchors_preset = -1
+anchor_right = 0.759375
+anchor_bottom = 0.95
+offset_left = -796.0
+offset_top = -576.0
+offset_right = 1122.0
+offset_bottom = 503.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerDot" parent="." unique_id=780174702 instance=ExtResource("4_eu11u")]
+position = Vector2(452, 627)
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1925064896]
+position = Vector2(582, 575)
+zoom = Vector2(4, 4)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1862003567]
+tile_map_data = PackedByteArray("AAAKABMAAAAAAAAAAAAKABQAAAAAAAAAAAAKABUAAAAAAAAAAAAKABYAAAAAAAAAAAALABYAAAAAAAAAAAAMABYAAAAAAAAAAAANABYAAAAAAAAAAAAOABYAAAAAAAAAAAAPABYAAAAAAAAAAAAQABYAAAAAAAAAAAARABYAAAAAAAAAAAASABYAAAAAAAAAAAATABYAAAAAAAAAAAAUABYAAAAAAAAAAAAVABYAAAAAAAAAAAAWABYAAAAAAAAAAAAXABYAAAAAAAAAAAAYABYAAAAAAAAAAAAZABYAAAAAAAAAAAAZABMAAAAAAAAAAAAZABIAAAAAAAAAAAAZABEAAAAAAAAAAAAZAA8AAAAAAAAAAAAZAA4AAAAAAAAAAAAZAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAKAA4AAAAAAAAAAAAKAA8AAAAAAAAAAAAKABAAAAAAAAAAAAAKABEAAAAAAAAAAAAKABIAAAAAAAAAAAARABUAAAAAAAAAAAASABUAAAAAAAAAAAATABUAAAAAAAAAAAAUABUAAAAAAAAAAAAVABUAAAAAAAAAAAAQABUAAAAAAAAAAAAPABUAAAAAAAAAAAAOABUAAAAAAAAAAAANABUAAAAAAAAAAAAMABUAAAAAAAAAAAALABUAAAAAAAAAAAAZABQAAAABAAAAAAAZABUAAAAAAAAAAAAYABUAAAAAAAAAAAAXABUAAAAAAAAAAAAWABUAAAAAAAAAAAALAA0AAAABAAAAAAAMAA0AAAABAAAAAAAYAA0AAAABAAAAAAAXAA0AAAABAAAAAAAWAA0AAAABAAAAAAAVAA0AAAABAAAAAAAUAA0AAAABAAAAAAATAA0AAAABAAAAAAASAA0AAAABAAAAAAARAA0AAAABAAAAAAAQAA0AAAABAAAAAAAPAA0AAAABAAAAAAAOAA0AAAABAAAAAAANAA0AAAABAAAAAAAZABAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_3ipdw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1203850698]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1982691596]
+self_modulate = Color(0, 0.011764706, 0, 1)
+top_level = true
+offset_left = 155.0
+offset_top = 133.0
+offset_right = 2139.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 32
+text = "感谢游玩，你已经完成了本游戏
+这归功于你的智慧，耐心，
+（我们本有更多的关卡与更丰富的机制，非常遗憾由于经验不足与低效率没能做出来）
+再次感谢游玩，希望你玩的愉快"
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=14311826]
+self_modulate = Color(0.99215686, 0.3372549, 0, 1)
+top_level = true
+offset_left = 545.0
+offset_top = 172.0
+offset_right = 2529.0
+offset_bottom = 361.0
+theme_override_font_sizes/font_size = 39
+text = "以及制作组的时间不足"

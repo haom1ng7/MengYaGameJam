@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://o42shirnybqb"]
+
+[ext_resource type="PackedScene" uid="uid://b4hcof6bp7fqj" path="res://Scenes/Characters/PlayerDot.tscn" id="1_ytf4i"]
+[ext_resource type="PackedScene" uid="uid://cspnbs5dgj8ct" path="res://Scenes/Objects/Runner.tscn" id="2_7e5cw"]
+[ext_resource type="PackedScene" uid="uid://csr3rj1v25imu" path="res://Scenes/Objects/Cannon.tscn" id="3_7e5cw"]
+[ext_resource type="PackedScene" uid="uid://3bm8rj3fwqm8" path="res://Scenes/Environment/OneWayPlatform.tscn" id="4_iuug4"]
+[ext_resource type="PackedScene" uid="uid://d4g0qxrjtotqj" path="res://Scenes/Objects/WiFi.tscn" id="5_o0omn"]
+[ext_resource type="PackedScene" uid="uid://bswvasc67j72w" path="res://Scenes/Objects/Balloon.tscn" id="6_dqpvo"]
+[ext_resource type="PackedScene" uid="uid://b78u5yskk1qqi" path="res://Scenes/Levels/PauseMenu.tscn" id="7_gyeg4"]
+[ext_resource type="Script" uid="uid://bghlf8ifap2yh" path="res://Scripts/Levels/UI.gd" id="8_cuare"]
+[ext_resource type="PackedScene" uid="uid://bdbi3qy4bpb0l" path="res://Scenes/Objects/Door.tscn" id="9_qhub5"]
+[ext_resource type="PackedScene" uid="uid://dvkqcaw308y06" path="res://Scenes/Objects/Lever.tscn" id="10_cuare"]
+[ext_resource type="PackedScene" uid="uid://chcololtm37v3" path="res://Scenes/Objects/Finish.tscn" id="12_a1huo"]
+[ext_resource type="PackedScene" uid="uid://okbmp562ygun" path="res://Scenes/Levels/MainMenu.tscn" id="12_buhu8"]
+
+[sub_resource type="GDScript" id="GDScript_cuare"]
+script/source = "extends Node2D
+@onready var pause_menu: Control = $PauseMenu
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iuug4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o0omn"]
+
+[node name="TestLevel" type="Node2D" unique_id=713559436]
+script = SubResource("GDScript_cuare")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=398691272]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1391881932]
+position = Vector2(0, 129)
+shape = SubResource("WorldBoundaryShape2D_iuug4")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1995279137]
+position = Vector2(0, 151)
+scale = Vector2(267.99997, 42.83145)
+texture = SubResource("PlaceholderTexture2D_o0omn")
+
+[node name="PlayerDot" parent="." unique_id=780174702 instance=ExtResource("1_ytf4i")]
+position = Vector2(-66, 106)
+
+[node name="Runner" parent="." unique_id=1158606412 instance=ExtResource("2_7e5cw")]
+position = Vector2(-28, 98)
+
+[node name="Cannon" parent="." unique_id=1252260928 instance=ExtResource("3_7e5cw")]
+position = Vector2(73, 45)
+
+[node name="OneWayPlatform" parent="." unique_id=2010015193 instance=ExtResource("4_iuug4")]
+position = Vector2(135, 65)
+rotation = 1.5707964
+
+[node name="WiFi" parent="." unique_id=279699519 node_paths=PackedStringArray("remote_target") instance=ExtResource("5_o0omn")]
+position = Vector2(-125, 110)
+remote_target = NodePath("../Runner")
+
+[node name="Balloon" parent="." unique_id=7806135 instance=ExtResource("6_dqpvo")]
+position = Vector2(28, 110)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1559518622]
+script = ExtResource("8_cuare")
+
+[node name="PauseMenu" parent="UI" unique_id=163397479 instance=ExtResource("7_gyeg4")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -295.0
+offset_right = -466.0
+offset_bottom = -295.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=114301088]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = -234.0
+offset_right = 394.0
+offset_bottom = -31.0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[img=100x64]res://Assets/Texture/WASD.png[/img] 移动
+[img=32x32]res://Assets/Texture/E.png[/img] 交互
+[img=32x32]res://Assets/Texture/Q.png[/img] 退出
+[img=180x32]res://Assets/Texture/Space.png[/img] 发射/跳跃
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="FadeRect" type="ColorRect" parent="UI" unique_id=460055208]
+offset_left = -2.0
+offset_top = 3.0
+offset_right = 1916.0
+offset_bottom = 1082.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Door" parent="." unique_id=1905055486 instance=ExtResource("9_qhub5")]
+position = Vector2(-90, 99.00001)
+scale = Vector2(0.245, 0.245)
+
+[node name="Lever" parent="." unique_id=779403901 instance=ExtResource("10_cuare")]
+position = Vector2(78.99999, 121)
+scale = Vector2(0.085, 0.085)
+door_path = NodePath("../Door")
+
+[node name="Finish" parent="." unique_id=1458884868 instance=ExtResource("12_a1huo")]
+position = Vector2(-54.000015, 69)
+scale = Vector2(0.385, 0.385)
+next_scene = ExtResource("12_buhu8")
+fade_layer_path = NodePath("../UI")

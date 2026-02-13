@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b64jp6awlhsth"]
+
+[ext_resource type="Script" uid="uid://b6h0do6dg4q7c" path="res://Scripts/Objects/BreakableWall.gd" id="1_supdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px43x"]
+
+[node name="BreakableWall" type="Node2D" unique_id=1968102428 groups=["BreakableWall"]]
+script = ExtResource("1_supdt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1845621517]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=879511473]
+shape = SubResource("RectangleShape2D_px43x")

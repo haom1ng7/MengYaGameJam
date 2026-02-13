@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d4g0qxrjtotqj"]
+
+[ext_resource type="Script" uid="uid://c3fhem8r3fr5k" path="res://Scripts/Objects/WiFi.gd" id="1_f0yk0"]
+[ext_resource type="Texture2D" uid="uid://dhj6bhnunn35y" path="res://Assets/Texture/Character/wifi.png" id="2_qg7yo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytiqg"]
+size = Vector2(290, 265.00006)
+
+[node name="WiFi" type="CharacterBody2D" unique_id=279699519]
+scale = Vector2(0.1, 0.1)
+collision_layer = 2
+script = ExtResource("1_f0yk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=385094867]
+texture = ExtResource("2_qg7yo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=48587047]
+position = Vector2(0, 37.499992)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_ytiqg")

@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://dmd58evgsghl2"]
+
+[ext_resource type="Script" uid="uid://bs7wfu0srok0d" path="res://Scripts/Menu/SelectMenu.gd" id="1_mxg1j"]
+[ext_resource type="Texture2D" uid="uid://du74la4yli4ct" path="res://Assets/Texture/Scene/Select/select_bg.png" id="1_y7pu7"]
+[ext_resource type="Texture2D" uid="uid://f0tujnmjbolk" path="res://Assets/Texture/Scene/Select/select 未选中.png" id="2_mxg1j"]
+[ext_resource type="Texture2D" uid="uid://wqtg8sdaywo2" path="res://Assets/Texture/Scene/Select/select_return.png" id="3_g285y"]
+
+[node name="SelectMenu" type="Control" unique_id=2110159462]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mxg1j")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1168232324]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_y7pu7")
+stretch_mode = 6
+
+[node name="LevelButtons" type="Node" parent="TextureRect" unique_id=393198818]
+
+[node name="LevelButton1" type="Button" parent="TextureRect/LevelButtons" unique_id=108333406]
+offset_left = 463.0
+offset_top = 336.0
+offset_right = 589.0
+offset_bottom = 479.0
+flat = true
+metadata/scene_path = "res://Scenes/Levels/Level1.tscn"
+
+[node name="Select未选中" type="Sprite2D" parent="TextureRect/LevelButtons/LevelButton1" unique_id=1365897636]
+position = Vector2(65, 53)
+scale = Vector2(0.7012579, 0.78099173)
+texture = ExtResource("2_mxg1j")
+
+[node name="Label" type="Label" parent="TextureRect/LevelButtons/LevelButton1" unique_id=54823246]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 94.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelButton2" type="Button" parent="TextureRect/LevelButtons" unique_id=917894157]
+offset_left = 617.0
+offset_top = 339.0
+offset_right = 743.0
+offset_bottom = 482.0
+flat = true
+metadata/scene_path = "res://Scenes/Levels/Level2.tscn"
+
+[node name="Select未选中" type="Sprite2D" parent="TextureRect/LevelButtons/LevelButton2" unique_id=1102767501]
+position = Vector2(65, 53)
+scale = Vector2(0.7012579, 0.78099173)
+texture = ExtResource("2_mxg1j")
+
+[node name="Label" type="Label" parent="TextureRect/LevelButtons/LevelButton2" unique_id=1919316749]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 94.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelButton3" type="Button" parent="TextureRect/LevelButtons" unique_id=1818475489]
+offset_left = 768.0
+offset_top = 337.0
+offset_right = 894.0
+offset_bottom = 480.0
+flat = true
+metadata/scene_path = "res://Scenes/Levels/Level3.tscn"
+
+[node name="Select未选中" type="Sprite2D" parent="TextureRect/LevelButtons/LevelButton3" unique_id=1887859552]
+position = Vector2(65, 53)
+scale = Vector2(0.7012579, 0.78099173)
+texture = ExtResource("2_mxg1j")
+
+[node name="Label" type="Label" parent="TextureRect/LevelButtons/LevelButton3" unique_id=1064084969]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 94.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelButton4" type="Button" parent="TextureRect/LevelButtons" unique_id=17001915]
+offset_left = 927.0
+offset_top = 339.0
+offset_right = 1053.0
+offset_bottom = 482.0
+flat = true
+metadata/scene_path = "res://Scenes/Levels/Level4.tscn"
+
+[node name="Select未选中" type="Sprite2D" parent="TextureRect/LevelButtons/LevelButton4" unique_id=823791525]
+position = Vector2(65, 53)
+scale = Vector2(0.7012579, 0.78099173)
+texture = ExtResource("2_mxg1j")
+
+[node name="Label" type="Label" parent="TextureRect/LevelButtons/LevelButton4" unique_id=264313013]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 94.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelButton5" type="Button" parent="TextureRect/LevelButtons" unique_id=510652081]
+offset_left = 1087.0
+offset_top = 341.0
+offset_right = 1213.0
+offset_bottom = 484.0
+flat = true
+metadata/scene_path = "res://Scenes/Levels/Level5.tscn"
+
+[node name="Select未选中" type="Sprite2D" parent="TextureRect/LevelButtons/LevelButton5" unique_id=600103983]
+position = Vector2(65, 53)
+scale = Vector2(0.7012579, 0.78099173)
+texture = ExtResource("2_mxg1j")
+
+[node name="Label" type="Label" parent="TextureRect/LevelButtons/LevelButton5" unique_id=257416927]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 94.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelButton6" type="Button" parent="TextureRect/LevelButtons" unique_id=598994822]
+offset_left = 463.0
+offset_top = 484.0
+offset_right = 589.0
+offset_bottom = 627.0
+flat = true
+metadata/scene_path = "res://Scenes/Levels/Level6.tscn"
+
+[node name="Select未选中" type="Sprite2D" parent="TextureRect/LevelButtons/LevelButton6" unique_id=380970291]
+position = Vector2(65, 53)
+scale = Vector2(0.7012579, 0.78099173)
+texture = ExtResource("2_mxg1j")
+
+[node name="Label" type="Label" parent="TextureRect/LevelButtons/LevelButton6" unique_id=193444582]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 94.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelButton7" type="Button" parent="TextureRect/LevelButtons" unique_id=1784702310]
+offset_left = 617.0
+offset_top = 487.0
+offset_right = 743.0
+offset_bottom = 630.0
+flat = true
+metadata/scene_path = "res://Scenes/Levels/Level7.tscn"
+
+[node name="Select未选中" type="Sprite2D" parent="TextureRect/LevelButtons/LevelButton7" unique_id=1067196289]
+position = Vector2(65, 53)
+scale = Vector2(0.7012579, 0.78099173)
+texture = ExtResource("2_mxg1j")
+
+[node name="Label" type="Label" parent="TextureRect/LevelButtons/LevelButton7" unique_id=1687724301]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 94.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelButton8" type="Button" parent="TextureRect/LevelButtons" unique_id=464618861]
+offset_left = 768.0
+offset_top = 485.0
+offset_right = 894.0
+offset_bottom = 628.0
+flat = true
+metadata/scene_path = "res://Scenes/Levels/Level8.tscn"
+
+[node name="Select未选中" type="Sprite2D" parent="TextureRect/LevelButtons/LevelButton8" unique_id=1562920300]
+position = Vector2(65, 53)
+scale = Vector2(0.7012579, 0.78099173)
+texture = ExtResource("2_mxg1j")
+
+[node name="Label" type="Label" parent="TextureRect/LevelButtons/LevelButton8" unique_id=452470713]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 94.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelButton9" type="Button" parent="TextureRect/LevelButtons" unique_id=898232952]
+offset_left = 927.0
+offset_top = 487.0
+offset_right = 1053.0
+offset_bottom = 630.0
+flat = true
+metadata/scene_path = "res://Scenes/Levels/Level9.tscn"
+
+[node name="Select未选中" type="Sprite2D" parent="TextureRect/LevelButtons/LevelButton9" unique_id=1516713148]
+position = Vector2(65, 53)
+scale = Vector2(0.7012579, 0.78099173)
+texture = ExtResource("2_mxg1j")
+
+[node name="Label" type="Label" parent="TextureRect/LevelButtons/LevelButton9" unique_id=800440973]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 83.0
+offset_right = 94.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectReturn" type="Sprite2D" parent="." unique_id=566186735]
+position = Vector2(933, 751)
+texture = ExtResource("3_g285y")
+
+[node name="BackButton" type="Button" parent="SelectReturn" unique_id=1377998879]
+offset_left = -318.0
+offset_top = -51.0
+offset_right = 323.0
+offset_bottom = 54.0
+flat = true

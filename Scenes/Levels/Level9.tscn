@@ -1,0 +1,137 @@
+[gd_scene format=4 uid="uid://kl3dlkjnh0og"]
+
+[ext_resource type="Texture2D" uid="uid://cmmf4s5nee03r" path="res://Assets/Texture/Scene/background？.png" id="1_e6fi7"]
+[ext_resource type="Script" uid="uid://bghlf8ifap2yh" path="res://Scripts/Levels/UI.gd" id="2_fkr78"]
+[ext_resource type="PackedScene" uid="uid://b78u5yskk1qqi" path="res://Scenes/Levels/PauseMenu.tscn" id="3_s7g4t"]
+[ext_resource type="PackedScene" uid="uid://b4hcof6bp7fqj" path="res://Scenes/Characters/PlayerDot.tscn" id="4_5yvxo"]
+[ext_resource type="Texture2D" uid="uid://cd80jm5qll6yy" path="res://Assets/Texture/Scene/map.png" id="5_el1rd"]
+[ext_resource type="PackedScene" uid="uid://chcololtm37v3" path="res://Scenes/Objects/Finish.tscn" id="6_bks1i"]
+[ext_resource type="PackedScene" uid="uid://d4g0qxrjtotqj" path="res://Scenes/Objects/WiFi.tscn" id="7_8nne8"]
+[ext_resource type="PackedScene" uid="uid://cqsbhkl8s1fqu" path="res://Scenes/Levels/LevelEnd.tscn" id="7_el1rd"]
+[ext_resource type="PackedScene" uid="uid://cspnbs5dgj8ct" path="res://Scenes/Objects/Runner.tscn" id="8_71jdt"]
+[ext_resource type="PackedScene" uid="uid://bdbi3qy4bpb0l" path="res://Scenes/Objects/Door.tscn" id="9_5yvxo"]
+[ext_resource type="PackedScene" uid="uid://dvkqcaw308y06" path="res://Scenes/Objects/Lever.tscn" id="10_el1rd"]
+[ext_resource type="PackedScene" uid="uid://bswvasc67j72w" path="res://Scenes/Objects/Balloon.tscn" id="11_bks1i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4d3fe"]
+texture = ExtResource("5_el1rd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -4.290001, -16, -4.290001)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0.63726044, -16, 0.89216614)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0.63726044, -16, 0.89216614)
+
+[sub_resource type="TileSet" id="TileSet_3ipdw"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_4d3fe")
+
+[node name="Level1" type="Node2D" unique_id=1437473766]
+
+[node name="Background？" type="Sprite2D" parent="." unique_id=1170243172]
+position = Vector2(842, 426)
+texture = ExtResource("1_e6fi7")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=896909254]
+script = ExtResource("2_fkr78")
+
+[node name="PauseMenu" parent="UI" unique_id=163397479 instance=ExtResource("3_s7g4t")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -295.0
+offset_right = -466.0
+offset_bottom = -295.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=350459701]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = -234.0
+offset_right = 394.0
+offset_bottom = -31.0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[img=100x64]res://Assets/Texture/WASD.png[/img] 移动
+[img=32x32]res://Assets/Texture/E.png[/img] 交互
+[img=32x32]res://Assets/Texture/Q.png[/img] 退出
+[img=180x32]res://Assets/Texture/Space.png[/img] 发射/跳跃
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="FadeRect" type="ColorRect" parent="UI" unique_id=556028059]
+anchors_preset = -1
+anchor_right = 0.69166666
+anchor_bottom = 0.85555553
+offset_left = -782.0
+offset_top = -585.0
+offset_right = 1136.0
+offset_bottom = 494.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerDot" parent="." unique_id=780174702 instance=ExtResource("4_5yvxo")]
+position = Vector2(452, 627)
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1925064896]
+position = Vector2(582, 575)
+zoom = Vector2(4, 4)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1862003567]
+tile_map_data = PackedByteArray("AAAKABMAAAAAAAAAAAAKABQAAAAAAAAAAAAKABUAAAAAAAAAAAAKABYAAAAAAAAAAAALABYAAAAAAAAAAAAMABYAAAAAAAAAAAANABYAAAAAAAAAAAAOABYAAAAAAAAAAAAPABYAAAAAAAAAAAAQABYAAAAAAAAAAAARABYAAAAAAAAAAAASABYAAAAAAAAAAAATABYAAAAAAAAAAAAUABYAAAAAAAAAAAAVABYAAAAAAAAAAAAWABYAAAAAAAAAAAAXABYAAAAAAAAAAAAYABYAAAAAAAAAAAAZABYAAAAAAAAAAAAZABMAAAAAAAAAAAAZABIAAAAAAAAAAAAZABEAAAAAAAAAAAAZAA8AAAAAAAAAAAAZAA4AAAAAAAAAAAAZAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAKAA4AAAAAAAAAAAAKAA8AAAAAAAAAAAAKABAAAAAAAAAAAAAKABEAAAAAAAAAAAAKABIAAAAAAAAAAAARABUAAAAAAAAAAAASABUAAAAAAAAAAAATABUAAAAAAAAAAAAUABUAAAAAAAAAAAAVABUAAAAAAAAAAAAQABUAAAAAAAAAAAAPABUAAAAAAAAAAAAOABUAAAAAAAAAAAANABUAAAAAAAAAAAAMABUAAAAAAAAAAAALABUAAAAAAAAAAAAZABQAAAABAAAAAAAZABUAAAAAAAAAAAAYABUAAAAAAAAAAAAXABUAAAAAAAAAAAAWABUAAAAAAAAAAAALAA0AAAABAAAAAAAMAA0AAAABAAAAAAAYAA0AAAABAAAAAAAXAA0AAAABAAAAAAAWAA0AAAABAAAAAAAVAA0AAAABAAAAAAAUAA0AAAABAAAAAAATAA0AAAABAAAAAAASAA0AAAABAAAAAAARAA0AAAABAAAAAAAQAA0AAAABAAAAAAAPAA0AAAABAAAAAAAOAA0AAAABAAAAAAANAA0AAAABAAAAAAAZABAAAAABAAAAAAARABQAAAAAAAAAAAARABMAAAAAAAAAAAARABIAAAAAAAAAAAARABEAAAAAAAAAAAASABQAAAAAAAAAAAASABMAAAAAAAAAAAASABIAAAAAAAAAAAASABEAAAAAAAAAAAASABAAAAAAAAAAAAARABAAAAAAAAAAAAARAA8AAAAAAAAAAAARAA4AAAAAAAAAAAASAA4AAAAAAAAAAAASAA8AAAAAAAAAAAALABIAAAAAAAAAAAAMABIAAAAAAAAAAAATABAAAAABAAAAAAAUABAAAAABAAAAAAAXABAAAAAAAAAAAAAYABAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_3ipdw")
+
+[node name="Finish" parent="." unique_id=1458884868 instance=ExtResource("6_bks1i")]
+position = Vector2(607.00006, 460)
+scale = Vector2(0.34703666, 0.34355205)
+next_scene = ExtResource("7_el1rd")
+fade_layer_path = NodePath("../UI")
+
+[node name="WiFi" parent="." unique_id=279699519 node_paths=PackedStringArray("remote_target") instance=ExtResource("7_8nne8")]
+position = Vector2(525, 655)
+remote_target = NodePath("../Balloon")
+
+[node name="Runner" parent="." unique_id=1158606412 instance=ExtResource("8_71jdt")]
+self_modulate = Color(1, 0.34901962, 0, 1)
+position = Vector2(372, 652)
+
+[node name="Door" parent="." unique_id=1905055486 instance=ExtResource("9_5yvxo")]
+position = Vector2(374, 611)
+scale = Vector2(0.5, 0.5)
+
+[node name="Door2" parent="." unique_id=889476298 instance=ExtResource("9_5yvxo")]
+position = Vector2(733, 495)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="Lever" parent="." unique_id=779403901 instance=ExtResource("10_el1rd")]
+position = Vector2(724, 664)
+scale = Vector2(0.1, 0.1)
+door_path = NodePath("../Door")
+
+[node name="Lever2" parent="." unique_id=1862623984 instance=ExtResource("10_el1rd")]
+position = Vector2(390, 568)
+scale = Vector2(0.1, 0.1)
+door_path = NodePath("../Door2")
+
+[node name="Balloon" parent="." unique_id=7806135 instance=ExtResource("11_bks1i")]
+position = Vector2(770, 647)
+
+[node name="WiFi2" parent="." unique_id=2133794444 node_paths=PackedStringArray("remote_target") instance=ExtResource("7_8nne8")]
+position = Vector2(626, 655)
+remote_target = NodePath("../Runner")

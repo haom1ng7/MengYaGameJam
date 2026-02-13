@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b78u5yskk1qqi"]
+
+[ext_resource type="Texture2D" uid="uid://b0fgea1erst3" path="res://Assets/Texture/Scene/Pause/pause_bg.png" id="1_l5y34"]
+[ext_resource type="Script" uid="uid://ch2qy8uhc7t3x" path="res://Scripts/Menu/PauseMenu.gd" id="1_nsf1q"]
+[ext_resource type="Texture2D" uid="uid://f3b28rjdu8ob" path="res://Assets/Texture/Scene/Pause/pause_resume.png" id="2_7f6x6"]
+[ext_resource type="Texture2D" uid="uid://bn1fk37krg5sx" path="res://Assets/Texture/Scene/Pause/pause_restart.png" id="3_34cp6"]
+[ext_resource type="Texture2D" uid="uid://4k58dks3ten8" path="res://Assets/Texture/Scene/Pause/pause_exit.png" id="4_nsf1q"]
+
+[node name="PauseMenu" type="Control" unique_id=163397479]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nsf1q")
+
+[node name="PauseBg" type="TextureRect" parent="." unique_id=1830738174]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l5y34")
+stretch_mode = 6
+
+[node name="PauseResume" type="Sprite2D" parent="PauseBg" unique_id=1063392433]
+position = Vector2(933.5, 398.5)
+texture = ExtResource("2_7f6x6")
+
+[node name="ResumeGameButton" type="Button" parent="PauseBg/PauseResume" unique_id=2077818057]
+offset_left = -284.0
+offset_top = -54.0
+offset_right = 286.0
+offset_bottom = 52.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseRestart" type="Sprite2D" parent="PauseBg" unique_id=2007227645]
+position = Vector2(935.5, 578.5)
+texture = ExtResource("3_34cp6")
+
+[node name="RestartLevelButton" type="Button" parent="PauseBg/PauseRestart" unique_id=35922325]
+offset_left = -286.0
+offset_top = -52.0
+offset_right = 286.0
+offset_bottom = 52.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseExit" type="Sprite2D" parent="PauseBg" unique_id=510548574]
+position = Vector2(933.5, 758.5)
+texture = ExtResource("4_nsf1q")
+
+[node name="ExitLevelButton" type="Button" parent="PauseBg/PauseExit" unique_id=1082776235]
+offset_left = -290.0
+offset_top = -52.0
+offset_right = 286.0
+offset_bottom = 56.0
+flat = true

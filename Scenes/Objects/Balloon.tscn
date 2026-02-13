@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bswvasc67j72w"]
+
+[ext_resource type="Script" uid="uid://bq3dauwe2ujws" path="res://Scripts/Objects/Balloon.gd" id="1_gbrs3"]
+[ext_resource type="Texture2D" uid="uid://bv58438bkqx6k" path="res://Assets/Texture/Character/balloon_whole.png" id="2_jvjea"]
+[ext_resource type="Texture2D" uid="uid://c8340ridysssq" path="res://Assets/Texture/Character/balloon.png" id="3_ddppk"]
+[ext_resource type="PackedScene" uid="uid://jsm5fwp77m6h" path="res://Scenes/Effects/PossessRipple.tscn" id="4_25xdb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddppk"]
+size = Vector2(118, 344)
+
+[node name="Balloon" type="CharacterBody2D" unique_id=7806135 node_paths=PackedStringArray("effect_spawn_point")]
+scale = Vector2(0.1, 0.1)
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_gbrs3")
+texture_full = ExtResource("2_jvjea")
+texture_rope = ExtResource("3_ddppk")
+possess_effect = ExtResource("4_25xdb")
+effect_spawn_point = NodePath("Marker2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=468528340]
+texture = ExtResource("2_jvjea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1527277209]
+shape = SubResource("RectangleShape2D_ddppk")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=732255713]
+position = Vector2(0, -113.665)

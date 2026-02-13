@@ -1,0 +1,16 @@
+# Godot 4+ specific ignores
+.godot/
+*.tmp
+export_presets.cfg
+.vscode/
+.idea/
+*.sln
+*.csproj
+.DS_Store
+Thumbs.db
+Desktop.ini
+builds/
+Temp/
+.gemini
+GEMINI.md
+.gemini-clipboard/
