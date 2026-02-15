@@ -50,17 +50,33 @@ func _handle_movement(delta: float) -> void:
 			velocity.y = jump_force
 
 func _handle_passive_physics(delta: float) -> void:
-	# 未附身物理：落地停，空中重力
 	if is_on_floor():
 		velocity = Vector2.ZERO
 	else:
 		velocity += get_gravity() * delta
+		print("Applying gravity: ", velocity) # 调试输出
+
+# ------------------------------------------------------------------------------
+# 附身/脱离逻辑
+# ------------------------------------------------------------------------------
+
+var _possessed: bool = false
+
+func _is_possessed() -> bool:
+	return _possessed
 
 func _on_possess_start() -> void:
+	_possessed = true
 	_update_texture(true)
 
 func _on_possess_end() -> void:
+	_possessed = false
 	_update_texture(false)
+	
+	# 重置物理状态
+	velocity = Vector2.ZERO
+	set_physics_process(true)
+
 
 # ------------------------------------------------------------------------------
 # 内部逻辑
